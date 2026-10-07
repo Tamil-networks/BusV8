@@ -1,29 +1,83 @@
 {
   "expo": {
-    "name": "project",
-    "slug": "project",
+    "name": "BusV8",
+    "slug": "where-is-my-bus",
     "version": "1.0.0",
     "orientation": "portrait",
+
     "icon": "./assets/icon.png",
+
     "userInterfaceStyle": "light",
+
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "ios": {
-      "supportsTablet": true
-    },
+
     "android": {
+      "package": "com.tamilexporeactnative.project",
+
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_BACKGROUND_LOCATION",
+        "FOREGROUND_SERVICE",
+        "FOREGROUND_SERVICE_LOCATION",
+        "INTERNET"
+      ],
+
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/android-icon-foreground.png",
-        "backgroundImage": "./assets/android-icon-background.png",
-        "monochromeImage": "./assets/android-icon-monochrome.png"
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#ffffff"
+      },
+
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyB9SB_Gm7KB_TrJDXHCU7DLGlQYwz7kTh8"
+        }
       }
     },
+
+    "ios": {
+      "supportsTablet": true,
+
+      "config": {
+        "googleMapsApiKey": "AIzaSyB9SB_Gm7KB_TrJDXHCU7DLGlQYwz7kTh8"
+      },
+
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "Allow BusV8 to access your location for bus tracking.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "Allow BusV8 to access your location in the background for bus tracking."
+      }
+    },
+
+    "androidStatusBar": {
+      "backgroundColor": "#000000",
+      "barStyle": "dark-content"
+    },
+
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+
+    "extra": {
+      "eas": {
+        "projectId": "6f5f96e9-2543-44f9-a4ad-6193bf53a8ca"
+      }
+    },
+
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Allow BusV8 to access your location.",
+          "locationAlwaysAndWhenInUsePermission": "Allow BusV8 to access your location in the background for bus tracking.",
+          "isAndroidBackgroundLocationEnabled": true,
+          "isAndroidForegroundServiceEnabled": true
+        }
+      ],
+      "expo-font"
+    ]
   }
 }
